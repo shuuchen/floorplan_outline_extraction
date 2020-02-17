@@ -1,0 +1,13 @@
+label,name
+0,unknown
+1,balcony
+2,bath
+3,cl
+4,dk
+5,tatami
+6,wc
+7,washing
+8,west
+9,entrance
+10,door
+11,wall
