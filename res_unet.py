@@ -7,7 +7,7 @@ class ResUNet(nn.Module):
     def __init__(
         self,
         in_channels=1,
-        out_channels=1,
+        out_channels=2,
         depth=5,
         wf=6,
         padding=True,
@@ -60,6 +60,10 @@ class ResUNet(nn.Module):
         for i, up in enumerate(self.up_path):
             x = up(x, blocks[-i - 1])
 
+        #x = F.sigmoid(self.last(x))
+        #ones, zeros = torch.ones_like(x, dtype=torch.int32), torch.zeros_like(x, dtype=torch.int32)
+        #return torch.where(x > 0.5, ones, zeros)
+        
         return self.last(x)
 
 
